@@ -1,24 +1,27 @@
-const  path = require('path');
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const UglifyjsWebpackPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
-  entry :'./src/main.js',
+  entry: './src/main.js',
   output: {
-    path : path.resolve(__dirname, "dist"),
-    filename : "[name].bundle.js",
-    publicPath: 'dist/',
+    path: path.resolve(__dirname, "dist"),
+    filename: "[name].bundle.js",
+    // publicPath: 'dist/',
   },
   module: {
-    rules:[
+    rules: [
       {
         test: /\.css$/,
-        use:[
+        use: [
           'style-loader',
           'css-loader'
         ]
       },
       {
         test: /\.less/,
-        use:[
+        use: [
           'style-loader',
           'css-loader',
           'less-loader'
@@ -27,12 +30,12 @@ module.exports = {
 
       // npm i url-loader@^1.1.2 -D
       {
-        test:/\.(png|jpg|jpeg|gif)$/,
-        use:[
+        test: /\.(png|jpg|jpeg|gif)$/,
+        use: [
           {
             loader: 'url-loader',
             options: {
-              limit: 12*1024,
+              limit: 12 * 1024,
               name: 'img/[name]-url.[hash:8].[ext]'
             }
           },
@@ -67,17 +70,30 @@ module.exports = {
 
       //   npm i vue-loader@^13.0.0 vue-template-compiler@^2.5.21 -D
       {
-        test : /\.vue$/,
+        test: /\.vue$/,
         use: ['vue-loader']
       }
 
     ]
   },
 
-  resolve:{
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "index.html",
+      title: "use html-webpack-plugin"
+    }),
+    new UglifyjsWebpackPlugin(),
+    new webpack.BannerPlugin("\n最终版权归liuayong所有\n"),
+
+  ],
+  resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
     }
+  },
+  devServer: {
+    contentBase: './dist',
+
   }
 
 }

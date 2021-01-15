@@ -32,3 +32,15 @@ webpack src/main.js dist/bundle.js
 
 
 
+## webpack plugin
+  webpack.BannerPlugin
+
+  const HtmlWebpackPlugin = require('html-webpack-plugin')
+  npm i  html-webpack-plugin@^3.2.0 -D
+
+
+  npm install uglifyjs-webpack-plugin@1.1.1 --save-dev
+
+  npm install --save-dev webpack-dev-server@2.9.1
+
+
