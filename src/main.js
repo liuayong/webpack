@@ -11,12 +11,35 @@ console.log(name);
 console.log(age);
 console.log(height);
 
+
+import * as obj from "./test"
+
+
 // require('../css/normal.css')
-import '../css/normal.css'
-require('../css/special.less')
+import normal from '../css/normal.css'
+const special = require('../css/special.less')
+
+
 
 
 
 
 document.write("<div class='hello'> Hello Webpack !!! </div>");
+
+import img from "../img/timg.jpg"
+console.log(img)
+let imgObj =  new Image();
+imgObj.src = img ;
+
+document.body.appendChild(imgObj)
+
+
+let imgObj2 =  new Image();
+let testImg = require("../img/test.jpg");
+imgObj2.src = testImg;
+console.log(testImg)
+document.body.appendChild(imgObj2)
+
+
+
 
