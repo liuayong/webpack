@@ -64,6 +64,8 @@ module.exports = {
           }
         }
       }
+
+      //   npm i vue-loader@^13.0.0 vue-template-compiler@^2.5.21 -D
     ]
   },
 
