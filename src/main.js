@@ -2,16 +2,9 @@
 import Vue from 'vue'
 
 
-const App = {
-  template : "<h2>{{name}}</h2>",
-  data(){
-    return {
-      name : "我是APP组件"
-    }
-  }
-}
 
 
+import App from "../vue/App.vue";
 
 const app = new Vue({
   el: "#app",
