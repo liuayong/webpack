@@ -26,7 +26,7 @@ npm install webpack@3
 ## webpack起步
 + webpack 打包
 webpack src/main.js dist/bundle.js
-
+./node_modules/.bin/webpack --progress
 
 
 
