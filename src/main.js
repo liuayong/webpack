@@ -8,9 +8,9 @@ import App from "../vue/App.vue";
 
 const app = new Vue({
   el: "#app",
-  template : "<div class='a b c'> Hello {{name}} <App/> </div>",
+  template : "<div class='template'> Hello {{name}} <App/> </div>",
   data: {
-    name : "liuayong"
+    name : "liuayong !!!"
   },
   components: {
     App,

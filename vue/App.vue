@@ -1,8 +1,8 @@
 <template>
     <div class="app">
-        <h2 class="title">{{name}}</h2>
+        <h2 class="title">Hello {{name}}</h2>
         <div class="wrap">
-            {{message}}
+          你好啊  {{message}}
         </div>
     </div>
 </template>
