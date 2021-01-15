@@ -10,3 +10,13 @@ import {name, age, height} from "./info";
 console.log(name);
 console.log(age);
 console.log(height);
+
+// require('../css/normal.css')
+import '../css/normal.css'
+require('../css/special.less')
+
+
+
+
+document.write("<div class='hello'> Hello Webpack !!! </div>");
+

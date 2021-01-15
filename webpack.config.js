@@ -4,7 +4,26 @@ module.exports = {
   entry :'./src/main.js',
   output: {
     path : path.resolve(__dirname, "dist"),
-    filename : "[name].bundle.[chunkhash:8].js"
+    filename : "[name].bundle.js"
+  },
+  module: {
+    rules:[
+      {
+        test: /\.css$/,
+        use:[
+          'style-loader',
+          'css-loader'
+        ]
+      },
+      {
+        test: /\.less/,
+        use:[
+          'style-loader',
+          'css-loader',
+          'less-loader'
+        ]
+      }
+    ]
   }
 
 }
